@@ -65,12 +65,17 @@ margin: 0px;
 }
 
 
+
+
+
+
+
 .world {
   min-width: 500px;
   min-height: 500px;
   background-image: url(../src/img/grid3.png);
   display: inline-block;
-  padding: 1024px;
+  padding: 5120px;
 
 }
 
