@@ -8,7 +8,7 @@
 
 
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/aset/node/nade.css">
+
 
 
 
@@ -16,10 +16,16 @@
   </head>
   <body>
 
-    <div class="toolbars">
 
-      <div class="Drag"></div>
+<!-- ====== Tool bar ====== -->
 
+
+
+
+
+    <div class="leftToolBar">
+
+      <div onclick="Drag()" class="Drag"></div>
 
       <ul class="toolBlock">
         <li><h3 class="Tool_title">Tool Title :</h3></li>
@@ -32,6 +38,32 @@
         <li class="Tools"><h3>Tool 7</h3></li>
       </ul>
     </div>
+
+
+
+    <script type="text/javascript">
+      //var leftToolBar = document.getElementsByClassName('toolBars')[0].style;
+      var add = 200;
+
+
+      function Drag() {
+        add = add + 1;
+        var addString = add.toString();
+        document.getElementsByClassName('leftToolBar')[0].style = ("width:" + addString + "px;");
+
+        console.log(add);
+      }
+    </script>
+
+
+
+
+
+
+<!-- ====== end Tool bar ====== -->
+
+
+
 
     <div class="world">
 

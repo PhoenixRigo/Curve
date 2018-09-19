@@ -5,7 +5,7 @@ body {
   background-color: #333437;
 }
 
-.toolbars {
+.leftToolBar {
   background-color: #46474a;
   width: 200px;
   height: 100vh;
@@ -37,6 +37,8 @@ border-bottom: 3px solid #00000040;
 letter-spacing: 1px;
 
 margin: 0px;
+
+user-select: none;
 }
 
 .Tool_title {
