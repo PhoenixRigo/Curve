@@ -14,7 +14,7 @@
 
 
   </head>
-  <body>
+  <body onmousemove="drag(event)">
 
 
 <!-- ====== Tool bar ====== -->
@@ -25,7 +25,7 @@
 
     <div class="leftToolBar">
 
-      <div class="Drag"></div>
+      <div class="Drag" onmousedown="down()" onmouseup="up()"></div>
 
       <ul class="toolBlock">
         <li><h3 class="Tool_title">Tool Title :</h3></li>
@@ -42,6 +42,34 @@
 
 
     <script type="text/javascript">
+
+      var clickT = 0;
+
+      function down() {
+
+        clickT = 1;
+        console.log(clickT);
+      }
+
+      function up() {
+        clickT = 0;
+        console.log(clickT);
+      }
+
+      function drag(event) {
+        if (clickT === 1) {
+          var cordX = event.clientX + 3;
+          document.getElementsByClassName('leftToolBar')[0].style = ("width:" + cordX.toString() + "px;");
+        }
+        else {
+          console.log("BON !");
+        }
+
+      }
+
+
+
+
 
     /*
 
