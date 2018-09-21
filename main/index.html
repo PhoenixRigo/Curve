@@ -27,14 +27,16 @@
   <div class="leftToolBar">
     <div class="Drag" onmousedown="down()" onmouseup="up()"></div>
     <ul class="toolBlock">
-      <li><h3 class="Tool_title"><span class="onglet"></span>Tool Title :</h3></li>
-      <li class="Tools"><h3>Container</h3></li>
-      <li class="Tools"><h3>Color</h3></li>
-      <li class="Tools"><h3>Text</h3></li>
-      <li class="Tools"><h3>Image</h3></li>
-      <li class="Tools"><h3>Tool 5</h3></li>
-      <li class="Tools"><h3>Tool 6</h3></li>
-      <li class="Tools"><h3>Tool 7</h3></li>
+      <li onclick="toolTab()"><h3 class="Tool_title"><div class="Tab"></div>Tool Title :</h3></li>
+      <div class="toolList">
+        <li class="Tools"><h3>Container</h3></li>
+        <li class="Tools"><h3>Color</h3></li>
+        <li class="Tools"><h3>Text</h3></li>
+        <li class="Tools"><h3>Image</h3></li>
+        <li class="Tools"><h3>Tool 5</h3></li>
+        <li class="Tools"><h3>Tool 6</h3></li>
+        <li class="Tools"><h3>Tool 7</h3></li>
+      </div>
     </ul>
   </div>
 </div>
@@ -72,6 +74,7 @@
           clickT = 0;
           document.getElementsByClassName('leftToolBar')[0].style = ("visibility: hidden;");
           document.getElementsByClassName('openTips')[0].style = ("visibility: visible;");
+          document.getElementsByClassName('toolList')[0].style = ("visibility: hidden;");
         }
       }
 
@@ -80,41 +83,33 @@
         //console.log("OUI");
         document.getElementsByClassName('leftToolBar')[0].style = ("visibility: visible; width:" + defWidth + "px");
         document.getElementsByClassName('openTips')[0].style = ("visibility: hidden;");
+        document.getElementsByClassName('toolList')[0].style = ("visibility: visible;");
       }
 
+/*================= script onglet =================*/
 
+      var flag = 0;
 
+      function toolTab() {
 
-
-    /*
-
-    onmouseover="Drag(event)" onclick="test()" onmouseup="reset()"
-
-
-      //var leftToolBar = document.getElementsByClassName('toolBars')[0].style;
-      var add = 200;
-      var i = 0;
-
-      function test() {
-        //document.getElementsByClassName('leftToolBar')[0].style = ("width:200px;");
-        i = 1;
-      }
-
-      function reset() {
-        //document.getElementsByClassName('leftToolBar')[0].style = ("width:200px;");
-        i = 0;
-      }
-
-      function Drag(event) {
-        if (i === 1) {
-          add = (event.clientX + 5);
-          document.getElementsByClassName('leftToolBar')[0].style = ("width:" + add.toString() + "px;");
-
-          console.log(add);
+        if(flag === 0) {
+          flag = 1;
+          document.getElementsByClassName('Tab')[0].style = ("transform: rotate(-90deg);");
+          document.getElementsByClassName('toolBlock')[0].style = ("height: 40px;");
+          document.getElementsByClassName('toolList')[0].style = ("visibility: hidden;");
+          console.log(flag);
+        }
+        else {
+          flag = 0;
+          document.getElementsByClassName('Tab')[0].style = ("transform: rotate(0deg);");
+          document.getElementsByClassName('toolBlock')[0].style = ("height: auto;");
+          document.getElementsByClassName('toolList')[0].style = ("visibility: visible;");
+          console.log(flag);
         }
 
+
       }
-*/
+
     </script>
 
 
