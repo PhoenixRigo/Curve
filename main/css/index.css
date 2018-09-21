@@ -17,7 +17,7 @@ body {
 }
 
 .Drag {
-  width: 10px;
+  width: 5px;
   border-right: 2px solid #222;
   height: 100vh;
   display: inline-block;
@@ -40,6 +40,10 @@ letter-spacing: 1px;
 margin: 0px;
 
 user-select: none;
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+
 }
 
 .Tool_title {
@@ -73,11 +77,50 @@ user-select: none;
 
 
 
+
+
+
+
+
+
+
+
+
+
+.openTips h4 {
+  z-index: 1000;
+  position: fixed;
+  margin: 20px 0px 0px 0px;
+  background-color: #00000030;
+  padding: 0px 10px;
+  width: 10px;
+  text-align: right;
+  border-radius: 0px 15px 15px 0px;
+  color: #ccccccb0;
+  cursor: pointer;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .world {
   min-width: 500px;
   min-height: 500px;
   background-image: url(../src/img/grid3.png);
   display: inline-block;
-  padding: 5120px;
+  padding: 3120px;
 
 }
