@@ -14,11 +14,11 @@
 
 
   </head>
-  <body onmousemove="drag(event)">
+  <body onmousemove="drag(event)" onmousemove="Ndrag(event)">
 
 
 
-  <div class="FullScreen"></div>
+  <!--<div class="FullScreen" ></div>-->
 
 <!-- ====== Tool bar ====== -->
 
@@ -148,7 +148,7 @@
 
 
 
-    <div class="world" >
+    <div class="world">
 
 
 
@@ -157,7 +157,7 @@
 
     <div class="Npanel_1">
 
-      <div class="nodeTitle" onmousedown="Nclick()" onmouseup="Nunclick()"><h5>Node 1</h5></div>
+      <div class="nodeTitle"><h5>Node 1</h5></div>
 
       <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
       <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
@@ -167,7 +167,10 @@
       <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
     </div>
 
-    <script type="text/javascript">
+
+
+
+    <!--<script type="text/javascript">
       var NclickT = 0;
 
       function Nclick() {
@@ -183,18 +186,67 @@
         if (NclickT === 1) {
           var NlocX = event.clientX;
           var NlocY = event.clientY;
-          document.getElementsByClassName('Npanel_1')[0].style = ("margin-left:" + NlocX.toString() + "px;");
-          document.getElementsByClassName('Npanel_1')[0].style = ("margin-top:" + NlocY.toString() + "px;");
+          document.getElementsByClassName('Npanel_1')[0].style = ("left:" + NlocX.toString() + "px;");
+          document.getElementsByClassName('Npanel_1')[0].style = ("left:" + NlocX.toString() + "px;");
 
           console.log(NlocY + "Y");
           console.log(NlocX + "X");
         }
       }
-    </script>
+    </script>-->
+
+    <script>
+      //Make the DIV element draggagle:
+      var fin = document.getElementsByClassName('Npanel_1').length;
+      for (var i = 0; i < fin; i++) {
+        dragElement(document.getElementsByClassName("Npanel_1")[i]);
+      }
+
+
+      function dragElement(elmnt) {
+        var  elemDragX= 0, elemDragY = 0;
+        var  mousePosX = 0, mousePosY = 0;
+
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+
+        function dragMouseDown(event) {
+          console.log(event);
+          console.log(event);
+          event.preventDefault();
+          // get the mouse cursor position at startup:
+          mousePosX = event.clientX;
+          mousePosY = event.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(event) {
+          event.preventDefault();
+          // calculate the new cursor position:
+          elemDragX = mousePosX - event.clientX;
+          elemDragY = mousePosY - event.clientY;
+          mousePosX = event.clientX;
+          mousePosY = event.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - elemDragY) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - elemDragX) + "px";
+        }
+
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+</script>
 
 
     <style media="screen">
       .Npanel_1 {
+        position: absolute;
+        z-index: 9999;
         width: 129px;
         padding: 0px 0px 1px 0px;
         background-color: #151519;
@@ -206,6 +258,8 @@
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
+
+
         /*opacity: 0.7;*/
       }
 
@@ -240,7 +294,7 @@
         text-align: center;
         background-color: #222;
 
-        cursor: move;
+        /*cursor: move;*/
       }
 
       .nodeTitle h5{
@@ -273,9 +327,22 @@
 
     </style>
 
-    <script type="text/javascript">
 
-    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
