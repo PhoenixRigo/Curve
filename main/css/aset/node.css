@@ -10,7 +10,6 @@
 
 .Ninput h5 {
   padding: 0px 20px;
-  font-family: sans-serif;
   border-left: 3px solid #69b;
   margin: 10px 0px;
   text-align: left;
@@ -19,7 +18,6 @@
 
 .Noutput h5 {
   padding: 0px 20px;
-  font-family: sans-serif;
   border-right: 3px solid #6b9;
   margin: 10px 0px;
   text-align: right;

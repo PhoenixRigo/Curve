@@ -17,6 +17,9 @@
   <body onmousemove="drag(event)">
 
 
+
+  <div class="FullScreen"></div>
+
 <!-- ====== Tool bar ====== -->
 
 
@@ -27,7 +30,12 @@
   <div class="leftToolBar">
     <div class="Drag" onmousedown="down()" onmouseup="up()"></div>
     <ul class="toolBlock">
-      <li onclick="toolTab()"><h3 class="Tool_title"><div class="Tab"></div>Tool Title :</h3></li>
+
+      <li onclick="toolTab()">
+        <h3 class="Tool_title">
+          <span class="Tab"></span>Tool Title :
+        </h3>
+      </li>
       <div class="toolList">
         <li class="Tools"><h3>Container</h3></li>
         <li class="Tools"><h3>Color</h3></li>
@@ -38,6 +46,7 @@
         <li class="Tools"><h3>Tool 7</h3></li>
       </div>
     </ul>
+
   </div>
 </div>
 
@@ -65,7 +74,7 @@
 
       function drag(event) {
         if (clickT === 1) {
-          var cordX = event.clientX + 5;
+          var cordX = event.clientX + 1;
           document.getElementsByClassName('leftToolBar')[0].style = ("width:" + cordX.toString() + "px;");
         }
 
@@ -95,16 +104,16 @@
         if(flag === 0) {
           flag = 1;
           document.getElementsByClassName('Tab')[0].style = ("transform: rotate(-90deg);");
-          document.getElementsByClassName('toolBlock')[0].style = ("height: 40px;");
-          document.getElementsByClassName('toolList')[0].style = ("visibility: hidden;");
-          console.log(flag);
+          document.getElementsByClassName('toolBlock')[0].style = ("height: 33px;");
+          //document.getElementsByClassName('toolList')[0].style = ("visibility: hidden;");
+          //console.log(flag);
         }
         else {
           flag = 0;
           document.getElementsByClassName('Tab')[0].style = ("transform: rotate(0deg);");
           document.getElementsByClassName('toolBlock')[0].style = ("height: auto;");
-          document.getElementsByClassName('toolList')[0].style = ("visibility: visible;");
-          console.log(flag);
+          //document.getElementsByClassName('toolList')[0].style = ("visibility: visible;");
+          //console.log(flag);
         }
 
 
@@ -122,11 +131,155 @@
 
 
 
-    <div class="world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="world" >
 
 
 
     <!-- nodes -->
+
+
+    <div class="Npanel_1">
+
+      <div class="nodeTitle" onmousedown="Nclick()" onmouseup="Nunclick()"><h5>Node 1</h5></div>
+
+      <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
+      <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
+      <div class="Ninput"><div class="input"></div><h5>Node 3</h5></div>
+      <div class="Ninput"><div class="input"></div><h5>Node 4</h5></div>
+      <div class="Noutput"><h5>Node 5</h5><div class="output"></div></div>
+      <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
+    </div>
+
+    <script type="text/javascript">
+      var NclickT = 0;
+
+      function Nclick() {
+        NclickT = 1;
+        console.log(NclickT);
+      }
+      function Nunclick() {
+        NclickT = 0;
+        console.log(NclickT);
+      }
+
+      function Ndrag(event) {
+        if (NclickT === 1) {
+          var NlocX = event.clientX;
+          var NlocY = event.clientY;
+          document.getElementsByClassName('Npanel_1')[0].style = ("margin-left:" + NlocX.toString() + "px;");
+          document.getElementsByClassName('Npanel_1')[0].style = ("margin-top:" + NlocY.toString() + "px;");
+
+          console.log(NlocY + "Y");
+          console.log(NlocX + "X");
+        }
+      }
+    </script>
+
+
+    <style media="screen">
+      .Npanel_1 {
+        width: 129px;
+        padding: 0px 0px 1px 0px;
+        background-color: #151519;
+        color: #ccc;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px -5px #000;
+
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        /*opacity: 0.7;*/
+      }
+
+      .Ninput h5 {
+        padding: 0px 10px;
+        font-family: sans-serif;
+        /*border-left: 3px solid #69b;*/
+        margin: 10px 0px;
+        text-align: left;
+        user-select: none;
+      }
+
+
+      .Noutput h5{
+
+        padding: 0px 10px;
+        font-family: sans-serif;
+        margin: 10px 0px;
+        /*border-right: 3px solid #9b6;*/
+        text-align: right;
+        user-select: none;
+      }
+
+
+
+
+
+
+      .nodeTitle {
+        border-radius: 10px 10px 0px 0px;
+        padding: 10px 0px;
+        text-align: center;
+        background-color: #222;
+
+        cursor: move;
+      }
+
+      .nodeTitle h5{
+        margin: 0;
+      }
+
+      /* ===== node ===== */
+
+
+      .input {
+        width: 7px;
+        height: 7px;
+        margin: 3px 5px 0px -3px;
+        border-radius: 50%;
+        background-color: #69b;
+        float: left;
+      }
+
+      .output {
+        width: 7px;
+        height: 7px;
+        margin: -23px -3px 0px 0px;
+        border-radius: 50%;
+        background-color: #9b6;
+        float: right;
+      }
+
+
+
+
+    </style>
+
+    <script type="text/javascript">
+
+    </script>
+
+
+
+
 
 
 
