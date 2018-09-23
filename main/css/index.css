@@ -17,6 +17,7 @@ body {
   float: left;
   position: fixed;
   overflow-y: auto;
+
   margin-top: 33px;
 
   opacity: 0.8;
@@ -181,9 +182,10 @@ body {
 .world {
   min-width: 500px;
   min-height: 500px;
-  background-image: url(../src/img/grid3.png);
   display: inline-block;
-  /*padding: 0px 1120px 1120px 0px;*/
-  padding: 1120px;
+  background-image: url(../src/img/grid3.png);
+  background-color: #272829;
+  padding: 0px 1020px 1020px 0px;
+
   z-index: 100;
 }
