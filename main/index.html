@@ -152,18 +152,18 @@
         if (cordX <= minWidth) {
           //console.log(minWidth + "px");
           clickT = 0;
-          document.getElementsByClassName('leftToolBar')[0].style = ("visibility: hidden;");
-          document.getElementsByClassName('openTips')[0].style = ("visibility: visible;");
-          document.getElementsByClassName('toolList')[0].style = ("visibility: hidden;");
+          document.getElementsByClassName('leftToolBar')[0].style = ("display: none");
+          document.getElementsByClassName('openTips')[0].style = ("display: inherit");
+          document.getElementsByClassName('toolList')[0].style = ("display: none");
         }
       }
 
 
       function openBar() {
         //console.log("OUI");
-        document.getElementsByClassName('leftToolBar')[0].style = ("visibility: visible; width:" + defWidth + "px");
-        document.getElementsByClassName('openTips')[0].style = ("visibility: hidden;");
-        document.getElementsByClassName('toolList')[0].style = ("visibility: visible;");
+        document.getElementsByClassName('leftToolBar')[0].style = ("display: inherit width:" + defWidth + "px");
+        document.getElementsByClassName('openTips')[0].style = ("display: none");
+        document.getElementsByClassName('toolList')[0].style = ("display: inherit");
       }
 
 /*================= script onglet =================*/
@@ -220,6 +220,21 @@
 
 
     <div class="world">
+
+
+
+
+
+
+
+
+      <svg width="500px" height="200px;">
+        <path d="M190 0 L75 200 L225 200 Z"/>
+      </svg>
+
+
+
+
 
 
 
@@ -333,6 +348,7 @@
         background-color: #151519;
         color: #ccc;
         border-radius: 10px;
+        border: 1px solid #18181f;
         box-shadow: 0px 0px 15px -5px #000;
 
         top: 200px;
@@ -343,8 +359,11 @@
         -webkit-user-select: none;
         -ms-user-select: none;
 
+
         /*opacity: 0.7;*/
       }
+
+
 
       .Ninput h5 {
         padding: 0px 10px;
@@ -372,7 +391,7 @@
 
 
       .nodeTitle {
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 9px 9px 0px 0px;
         padding: 10px 0px;
         text-align: center;
         background-color: #222427;

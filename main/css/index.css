@@ -186,7 +186,10 @@ body {
   background-image: url(../src/img/grid3.png);
   background-color: #272829;
   /*padding: 0px 1020px 1020px 0px;*/
+<<<<<<< HEAD
   padding: 1120px;
+=======
+>>>>>>> 821a4e6aefc0879abf163ff9d8f5319e4064d989
 
   z-index: 100;
 }
