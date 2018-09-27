@@ -185,7 +185,8 @@ body {
   display: inline-block;
   background-image: url(../src/img/grid3.png);
   background-color: #272829;
-  padding: 0px 1020px 1020px 0px;
+  /*padding: 0px 1020px 1020px 0px;*/
+  padding: 1120px;
 
   z-index: 100;
 }
