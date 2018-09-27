@@ -1,0 +1,83 @@
+.Npanel_1 {
+
+  position: absolute;
+  width: 150px;
+  padding: 0px 0px 1px 0px;
+  background-color: #151519;
+  color: #ccc;
+  border-radius: 10px;
+  border: 1px solid #18181f;
+  box-shadow: 0px 0px 15px -5px #000;
+
+
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+
+  /*opacity: 0.7;*/
+}
+
+
+
+.Ninput h5 {
+  padding: 0px 10px;
+  font-family: sans-serif;
+  /*border-left: 3px solid #69b;*/
+  margin: 10px 0px;
+  text-align: left;
+  user-select: none;
+}
+
+.Ninput h5:hover {
+  color: #f00;
+}
+
+.Noutput h5{
+
+  padding: 0px 10px;
+  font-family: sans-serif;
+  margin: 10px 0px;
+  /*border-right: 3px solid #9b6;*/
+  text-align: right;
+  user-select: none;
+}
+
+
+
+
+
+
+.nodeTitle {
+  font-family: sans-serif;
+  border-radius: 9px 9px 0px 0px;
+  padding: 10px 0px;
+  text-align: center;
+  background-color: #222427;
+  margin: 0;
+
+  cursor: move;
+}
+
+/* ===== node ===== */
+
+
+.input {
+  width: 7px;
+  height: 7px;
+  margin: 3px 5px 0px -3px;
+  border-radius: 50%;
+  background-color: #69b;
+  float: left;
+}
+
+.output {
+  width: 7px;
+  height: 7px;
+  margin: -22px -3px 0px 0px;
+  border-radius: 50%;
+  background-color: #9b6;
+  float: right;
+}

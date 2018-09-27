@@ -1,3 +1,10 @@
+html {
+	margin: 0;
+	overflow:auto;
+	border: none;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -181,17 +188,14 @@ body {
 
 
 .world {
+  position: absolute;
   min-width: 500px;
   min-height: 500px;
   display: inline-block;
   background-image: url(../src/img/grid3.png);
   background-color: #272829;
   /*padding: 0px 1020px 1020px 0px;*/
-<<<<<<< HEAD
-  padding: 1120px;
-=======
   padding: 2000px;
->>>>>>> 821a4e6aefc0879abf163ff9d8f5319e4064d989
 
-  z-index: 100;
+  z-index: -1000000;
 }

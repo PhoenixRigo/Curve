@@ -216,83 +216,86 @@
 
 
 
-
-
-
-    <div class="world">
-
-
-
-
-
-
-
-
-      <svg width="500px" height="200px;">
-        <path d="M190 0 L75 200 L225 200 Z"/>
-      </svg>
-
-
-
-
-
-
-
-    <!-- nodes -->
-
-
-    <div class="Npanel_1">
-
-      <h5 class="nodeTitle">Node 1</h5>
-
-      <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 3</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 4</h5></div>
-      <div class="Noutput"><h5>Node 5</h5><div class="output"></div></div>
-      <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
-    </div>
-
-    <div class="Npanel_1">
-
-      <h5 class="nodeTitle">Node 1</h5>
-
-      <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 3</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 4</h5></div>
-      <div class="Noutput"><h5>Node 5</h5><div class="output"></div></div>
-      <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
-    </div>
-
-    <div class="Npanel_1">
-
-      <h5 class="nodeTitle">Node 1</h5>
-
-      <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 3</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 4</h5></div>
-      <div class="Noutput"><h5>Node 5</h5><div class="output"></div></div>
-      <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
-    </div>
-
-    <div class="Npanel_1">
-
-      <h5 class="nodeTitle">Node 1</h5>
-
-      <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 3</h5></div>
-      <div class="Ninput"><div class="input"></div><h5>Node 4</h5></div>
-      <div class="Noutput"><h5>Node 5</h5><div class="output"></div></div>
-      <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
-    </div>
+<object type="text/html" data="aset/node/node_test.html" style="top: 500px; left: 500px; height: 222px; width: 170px; overflow: hidden; position: absolute;"></object>
 
 
     <script>
+
+    //Make the DIV element draggagle:
+    var fin = document.getElementsByClassName('Npanel_1').length;
+    for (var i = 0; i < fin; i++) {
+      dragElement(document.getElementsByClassName("Npanel_1")[i]);
+    }
+
+    function dragElement(elmnt) {
+      var elemDragX= 0, elemDragY = 0;
+      var mousePosX = 0, mousePosY = 0;
+      document.getElementsByClassName("nodeTitle")[i].onmousedown = dragMouseDown;
+
+
+
+
+      function dragMouseDown(event) {
+        console.log(event);
+        console.log(event);*/
+        event.preventDefault();
+        // get the mouse cursor position at startup:
+        mousePosX = event.clientX;
+        mousePosY = event.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(event) {
+        event.preventDefault();
+        // calculate the new cursor position:
+        elemDragX = mousePosX - event.clientX;
+        elemDragY = mousePosY - event.clientY;
+        mousePosX = event.clientX;
+        mousePosY = event.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - elemDragY) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - elemDragX) + "px";
+
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       //Make the DIV element draggagle:
-      var fin = document.getElementsByClassName('Npanel_1').length;
+      /*var fin = document.getElementsByClassName('Npanel_1').length;
       for (var i = 0; i < fin; i++) {
         dragElement(document.getElementsByClassName("Npanel_1")[i]);
       }
@@ -308,7 +311,7 @@
         function dragMouseDown(event) {
           /*console.log(event);
           console.log(event);*/
-          event.preventDefault();
+          /*event.preventDefault();
           // get the mouse cursor position at startup:
           mousePosX = event.clientX;
           mousePosY = event.clientY;
@@ -332,123 +335,17 @@
 
         function closeDragElement() {
           /* stop moving when mouse button is released:*/
-          document.onmouseup = null;
+        /*  document.onmouseup = null;
           document.onmousemove = null;
         }
-      }
+      }*/
 </script>
 
 
-    <style media="screen">
-      .Npanel_1 {
 
-        position: absolute;
-        width: 150px;
-        padding: 0px 0px 1px 0px;
-        background-color: #151519;
-        color: #ccc;
-        border-radius: 10px;
-        border: 1px solid #18181f;
-        box-shadow: 0px 0px 15px -5px #000;
+    <div class="world">
 
-        top: 200px;
-        left: 300px;
-
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-
-
-        /*opacity: 0.7;*/
-      }
-
-
-
-      .Ninput h5 {
-        padding: 0px 10px;
-        font-family: sans-serif;
-        /*border-left: 3px solid #69b;*/
-        margin: 10px 0px;
-        text-align: left;
-        user-select: none;
-      }
-
-
-      .Noutput h5{
-
-        padding: 0px 10px;
-        font-family: sans-serif;
-        margin: 10px 0px;
-        /*border-right: 3px solid #9b6;*/
-        text-align: right;
-        user-select: none;
-      }
-
-
-
-
-
-
-      .nodeTitle {
-        border-radius: 9px 9px 0px 0px;
-        padding: 10px 0px;
-        text-align: center;
-        background-color: #222427;
-        margin: 0;
-
-        cursor: move;
-      }
-
-      /* ===== node ===== */
-
-
-      .input {
-        width: 7px;
-        height: 7px;
-        margin: 3px 5px 0px -3px;
-        border-radius: 50%;
-        background-color: #69b;
-        float: left;
-      }
-
-      .output {
-        width: 7px;
-        height: 7px;
-        margin: -22px -3px 0px 0px;
-        border-radius: 50%;
-        background-color: #9b6;
-        float: right;
-      }
-
-
-
-
-    </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- nodes -->
 
 
 
