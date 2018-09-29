@@ -2,7 +2,7 @@
 
 <div class="Npanel_1">
 
-  <h5 class="nodeTitle">Node 1</h5>
+  <h5 class="nodeTitle" onclick="test()">Node 1</h5>
 
   <div class="Ninput"><div class="input"></div><h5>Node 1</h5></div>
   <div class="Ninput"><div class="input"></div><h5>Node 2</h5></div>
@@ -11,3 +11,128 @@
   <div class="Noutput"><h5>Node 5</h5><div class="output"></div></div>
   <div class="Noutput"><h5>Node 6</h5><div class="output"></div></div>
 </div>
+
+<script type="text/javascript">
+
+
+  //Make the DIV element draggagle:
+  var fin = document.getElementsByClassName('Npanel_1').length;
+  for (var i = 0; i < fin; i++) {
+    dragElement(document.getElementsByClassName("Npanel_1")[i]);
+  }
+
+  function dragElement(elmnt) {
+    var elemDragX= 0, elemDragY = 0;
+    var mousePosX = 0, mousePosY = 0;
+    document.getElementsByClassName("nodeTitle")[i].onmousedown = dragMouseDown;
+
+
+
+
+    function dragMouseDown(event) {
+      /*console.log(event);
+      console.log(event);*/
+      event.preventDefault();
+      // get the mouse cursor position at startup:
+      mousePosX = event.clientX;
+      mousePosY = event.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(event) {
+      event.preventDefault();
+      // calculate the new cursor position:
+      elemDragX = mousePosX - event.clientX;
+      elemDragY = mousePosY - event.clientY;
+      mousePosX = event.clientX;
+      mousePosY = event.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - elemDragY) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - elemDragX) + "px";
+
+    }
+
+    function closeDragElement() {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Make the DIV element draggagle:
+    /*var fin = document.getElementsByClassName('Npanel_1').length;
+    for (var i = 0; i < fin; i++) {
+      dragElement(document.getElementsByClassName("Npanel_1")[i]);
+    }
+
+    function dragElement(elmnt) {
+      var elemDragX= 0, elemDragY = 0;
+      var mousePosX = 0, mousePosY = 0;
+      document.getElementsByClassName("nodeTitle")[i].onmousedown = dragMouseDown;
+
+
+
+
+      function dragMouseDown(event) {
+        /*console.log(event);
+        console.log(event);*/
+        /*event.preventDefault();
+        // get the mouse cursor position at startup:
+        mousePosX = event.clientX;
+        mousePosY = event.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(event) {
+        event.preventDefault();
+        // calculate the new cursor position:
+        elemDragX = mousePosX - event.clientX;
+        elemDragY = mousePosY - event.clientY;
+        mousePosX = event.clientX;
+        mousePosY = event.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - elemDragY) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - elemDragX) + "px";
+
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+      /*  document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }*/
+</script>
+
+</script>
