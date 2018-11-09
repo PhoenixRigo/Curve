@@ -71,6 +71,7 @@
           /*============== INCLUDE NODES ================*/
           var btn = document.createElement("div");
           btn.setAttribute("w3-include-html", "aset/node/node_test.html");
+          btn.setAttribute("class", "Npanel_1")
 
           //document.head.appendChild(btn);
           document.getElementsByClassName('world')[0].appendChild(btn);
