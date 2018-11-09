@@ -25,7 +25,7 @@ body {
   position: fixed;
   overflow-y: auto;
 
-  margin-top: 33px;
+  /*margin-top: 33px;*/
 
   opacity: 0.8;
 }
