@@ -1,7 +1,7 @@
 .Npanel_1 {
 
-  position: absolute;
-  width: 150px;
+  position: relative;
+  width: 170px;
   padding: 0px 0px 1px 0px;
   background-color: #151519;
   color: #ccc;
@@ -30,11 +30,11 @@
   text-align: left;
   user-select: none;
 }
-
+/*
 .Ninput h5:hover {
   color: #f00;
 }
-
+*/
 .Noutput h5{
 
   padding: 0px 10px;
@@ -80,4 +80,42 @@
   border-radius: 50%;
   background-color: #9b6;
   float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+.color_box {
+  cursor: pointer;
+  margin: 10px 0px 10px 10px;
+  width: 36px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: #00f;
+  z-index: 100;
+}
+
+
+
+
+.color_main {
+  cursor: default;
+  padding: 10px;
+  background-color: #18181f;
+  position: absolute;
+  margin: 15px 0;
+}
+
+.color_chroma {
+  cursor: crosshair;
+  width: 256px;
+  height: 256px;
+  background-image: linear-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f00);
 }
