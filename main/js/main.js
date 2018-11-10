@@ -66,10 +66,10 @@ function toolTab() {
 
 
 /*============== INCLUDE NODES ================*/
-function Container(){
+function Container() {
 
   var btn = document.createElement("div");
-  btn.setAttribute("w3-include-html", "aset/node/node_test.html");
+  btn.setAttribute("includeHTML", "aset/node/node_test.html");
   btn.setAttribute("class", "Npanel_1")
 
   //document.head.appendChild(btn);
@@ -83,7 +83,7 @@ function Container(){
       for (i = 0; i < z.length; i++) {
         elmnt = z[i];
         /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("w3-include-html");
+        file = elmnt.getAttribute("includeHTML");
         if (file) {
           /*make an HTTP request using the attribute value as the file name:*/
           xhttp = new XMLHttpRequest();
@@ -92,7 +92,7 @@ function Container(){
               if (this.status == 200) {elmnt.innerHTML = this.responseText;}
               if (this.status == 404) {elmnt.innerHTML = "Node not found. ERROR : 234";}
               /*remove the attribute, and call this function once more:*/
-              elmnt.removeAttribute("w3-include-html");
+              elmnt.removeAttribute("includeHTML");
               //includeHTML();
              }
            }
@@ -104,3 +104,55 @@ function Container(){
        }
 }
 /*============== /INCLUDE NODES ================*/
+
+
+var a = 0;
+function colorPicker() {
+
+
+
+  if (a === 0) {
+    console.log("llld");
+    a = 1;
+    var btn = document.createElement("div");
+    btn.setAttribute("includeHTML", "aset/nodule/color_picker.html");
+    btn.setAttribute("class", "color_main")
+
+    //document.head.appendChild(btn);
+    document.getElementsByClassName('color_box')[0].appendChild(btn);
+
+
+
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("includeHTML");
+          if (file) {
+            /*make an HTTP request using the attribute value as the file name:*/
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Node not found. ERROR : 234";}
+                /*remove the attribute, and call this function once more:*/
+                elmnt.removeAttribute("includeHTML");
+                //includeHTML();
+               }
+             }
+             xhttp.open("GET", file, true);
+             xhttp.send();
+             /*exit the function:*/
+             return;
+           }
+         }
+  } else {
+    a = 0;
+    console.log("lol");
+    var element = document.getElementsByClassName('color_main')[0];
+    element.parentNode.removeChild(element);
+  }
+
+}
