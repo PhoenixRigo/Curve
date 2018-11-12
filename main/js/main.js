@@ -64,13 +64,14 @@ function toolTab() {
 
 
 
-
+var lol = 0;
 function test(selectNode) {
 
   var node_link = [
     "aset/node/node_test.html",
     "aset/node/node_text.html",
-    "Container"];
+    "Container"
+  ];
   var nodeSelected = node_link[selectNode]
   console.log(nodeSelected);
 
@@ -82,8 +83,12 @@ function test(selectNode) {
   btn.setAttribute("includeHTML", nodeSelected);
   btn.setAttribute("class", "Npanel_1")
 
+
+
   //document.head.appendChild(btn);
   document.getElementsByClassName('world')[0].appendChild(btn);
+
+
 
 
 
@@ -99,7 +104,20 @@ function test(selectNode) {
           xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
             if (this.readyState == 4) {
-              if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+
+                /*=====*/
+                var pute = document.getElementsByClassName('nodeTitle')[lol];
+                pute.setAttribute("onclick", "select("+lol+")");
+                console.log(pute);
+
+                console.log(lol);
+                lol++;
+
+                /*=====*/
+
+              }
               if (this.status == 404) {elmnt.innerHTML = "Node not found. ERROR : 234";}
 
               elmnt.removeAttribute("includeHTML");
@@ -114,6 +132,7 @@ function test(selectNode) {
        }
 
 /*============== /INCLUDE NODES ================*/
+
 }
 
 
@@ -166,4 +185,17 @@ function colorPicker() {
     element.parentNode.removeChild(element);
   }
 
+
+
+
+}
+
+
+
+
+
+
+function select(clL) {
+    document.getElementsByClassName('Npanel_1')[clL].style = "border: 1px solid #47e;";
+    console.log(clL);
 }
