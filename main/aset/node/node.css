@@ -1,7 +1,8 @@
 .Npanel_1 {
 
   position: absolute;
-  width: 170px;
+  min-width: 170px;
+  /*max-width: 500px;*/
   padding: 0px 0px 1px 0px;
   background-color: #151519;
   color: #ccc;
@@ -82,6 +83,16 @@
 }
 
 
+.Npanel_1 textarea {
+  min-width: 170px;
+  max-width: 800px;
+  min-height: 50px;
+  max-height: 800px;
+  padding: 5px;
+  margin: 0;
+  border: 0;
+  background-color: #ddd;
+}
 
 
 
