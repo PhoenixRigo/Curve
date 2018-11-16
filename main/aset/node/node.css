@@ -82,6 +82,17 @@
   float: right;
 }
 
+.output svg path {
+  stroke-width: 2px;
+  stroke: #a54;
+  fill: transparent
+}
+
+.output svg {
+  height: auto;
+  width: auto;
+}
+
 
 .Npanel_1 textarea {
   min-width: 170px;
