@@ -82,13 +82,16 @@
   float: right;
 }
 
-.output svg path {
+.path {
+  position: absolute;
   stroke-width: 2px;
   stroke: #a54;
-  fill: transparent
+  fill: transparent;
+
 }
 
-.output svg {
+.svg {
+    position: absolute;
   height: auto;
   width: auto;
 }

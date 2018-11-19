@@ -202,8 +202,6 @@ function select(clL) {
 
 
     //Make the DIV element draggagle:
-     var fin = document.getElementsByClassName('Npanel_1').length;
-
        dragElement(document.getElementsByClassName("Npanel_1")[clL]);
 
 
@@ -213,6 +211,66 @@ function select(clL) {
        document.getElementsByClassName("nodeTitle")[clL].onmousedown = dragMouseDown;
 
 
+
+
+       function dragMouseDown(event) {
+         /*console.log(event);
+         console.log(event);*/
+         event.preventDefault();
+         // get the mouse cursor position at startup:
+         mousePosX = event.clientX;
+         mousePosY = event.clientY;
+         document.onmouseup = closeDragElement;
+         // call a function whenever the cursor moves:
+         document.onmousemove = elementDrag;
+       }
+
+       function elementDrag(event) {
+         event.preventDefault();
+         // calculate the new cursor position:
+         elemDragX = mousePosX - event.clientX;
+         elemDragY = mousePosY - event.clientY;
+         mousePosX = event.clientX;
+         mousePosY = event.clientY;
+         // set the element's new position:
+         elmnt.style.top = (elmnt.offsetTop - elemDragY) + "px";
+         elmnt.style.left = (elmnt.offsetLeft - elemDragX) + "px";
+
+       }
+
+       function closeDragElement() {
+         /* stop moving when mouse button is released:*/
+         document.onmouseup = null;
+         document.onmousemove = null;
+       }
+     }
+
+}
+
+
+
+
+
+
+
+function nodu() {
+
+
+    document.getElementsByClassName('path')[0].style = "border: 1px solid #47e;";
+
+
+
+
+    //Make the DIV element draggagle:
+       dragElement(document.getElementsByClassName('path')[0]);
+
+
+     function dragElement(elmnt) {
+       var elemDragX = 0, elemDragY = 0;
+       var mousePosX = 0, mousePosY = 0;
+       document.getElementsByClassName('output')[0].onmousedown = dragMouseDown;
+
+  console.log("wefwrg");
 
 
        function dragMouseDown(event) {
